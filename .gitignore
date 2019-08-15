@@ -1,0 +1,13 @@
+*~
+*.orig
+*.rej
+*.swp
+.#*
+*.o
+.DS_Store
+.sass-cache
+.idea*
+*.iml
+*.pyc
+.phpcomplete_extended*
+ _ide_helper.php
