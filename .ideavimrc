@@ -1,0 +1,114 @@
+set tabstop=2
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set notitle
+set nobackup
+set autoread
+set noswapfile
+set hidden "編集中でも他のファイルを開けるようにする
+set backspace=indent,eol,start
+set browsedir=buffer
+set showmatch "括弧の対応をハイライト
+set autoindent
+set smartindent
+set encoding=utf-8
+" set fileencoding=utf-8,euc-jp,cp932
+set incsearch
+" 10進数にする
+set nrformats=
+set hlsearch "search result heightlist
+set nobomb
+set nocompatible
+set completeopt -=preview
+set previewheight=30
+set clipboard=unnamed
+set foldmethod=manual
+set splitright "縦分割時は右
+set splitbelow
+set lazyredraw
+set ttyfast
+set noundofile
+" set list                " 不可視文字の可視化
+set visualbell
+set noerrorbells
+
+"default keymap
+cnoremap <c-a> <HOME>
+cnoremap <c-e> <END>
+
+" insert
+inoremap jj <Esc><Esc>
+inoremap jk <Esc><Esc>
+" inoremap jw <Esc><Esc>:w<cr>a
+inoremap <c-a> <ESC>^i
+inoremap <c-e> <ESC>$a
+" inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+
+" normal
+nnoremap <c-e> $
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <tab> <C-w><C-W>
+noremap ; :
+nnoremap 0 ^
+nnoremap 9 <C-^>
+nnoremap gj j
+nnoremap gk k
+" inoremap { {}<Left>
+
+nnoremap  [unite]   <Nop>
+nmap    f [unite]
+
+" ideavim action
+nnoremap <c-f> :action SearchEverywhere<cr>
+nnoremap <c-p> :action GotoFile<cr>
+" nnoremap <M-j> :action EditorSelectWord<cr>
+nnoremap <c-1> :action VimInsertAfterCursor<cr>:action RenameElement<cr>
+
+nnoremap <cr> :action GotoDeclaration<cr>
+nnoremap <bs> :action Back<cr>
+
+nnoremap <space>c :<C-u>action RunCoverage<cr>
+
+" window
+nnoremap <c-l><c-l> :action MoveTabRight<cr>
+" nnoremap <c-j><c-j> :action MoveTabDown<cr>
+
+" run
+nnoremap <space>t :<C-u>action ChooseDebugConfiguration<cr>
+map <m-.> :<C-u>action Debug<cr>
+" nnoremap <space>y :<C-u>action ChooseRunConfiguration<cr>
+nnoremap <space>r :action Run<cr>
+nnoremap <space><space> :action RunClass<cr>
+nnoremap <C-r> :action RunClass<cr>
+nnoremap <space><enter> :action Rerun<cr>
+" nnoremap <space><space> :action Run<cr>
+map <m-d> :action DebugClass<cr>
+nnoremap <t> :action GotoTest<cr>
+nnoremap <space>e :action Quokka.RunQuokkaOnFile<cr>
+nnoremap <space>a :action Annotate<cr>
+nnoremap <space>b :<C-u>action Git.Branches<cr>
+
+" git
+" nnoremap <space>f :<C-u>action CheckinProject<cr>
+nnoremap <space>s :<C-u>action Git.Stash<cr>
+nnoremap <space>u :<C-u>action Git.Unstash<cr>
+nnoremap <space>w :<C-u>w<cr>
+
+nnoremap f :<c-u>action ReformatCode<cr>
+nnoremap <space>f :<c-u>action Javascript.Linters.EsLint.Fix<cr>
+" nnoremap <space>f :<c-u>action Javascript.Linters.EsLint.Fix<cr>
+
+nnoremap <c-i> :<c-u>action GotoImplementation<cr>
+cmap w <M-S>
+
+
+set surround
+set multiple-cursors
+set clipboard+=ideaputset clipboard+=ideaput
